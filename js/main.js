@@ -31,10 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Print functionality
-    const printBtn = document.querySelector('.print-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
+    // Simple print functionality
+    const printButton = document.querySelector('.print-button');
+    
+    if (printButton) {
+        printButton.addEventListener('click', () => {
             window.print();
         });
     }
