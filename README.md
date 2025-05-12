@@ -22,19 +22,19 @@ I'm a backend-focused software engineer with extensive experience in designing, 
 
 - **Languages**: Golang, C#, Python, Java, JavaScript
 - **Databases**: MongoDB, PostgreSQL, Redis, Oracle
-- **Infrastructure**: AWS, Docker, Kubernetes, Terraform
+- **Infrastructure**: AWS, Docker, Kubernetes
 - **Messaging**: Kafka, RabbitMQ
 - **Architecture**: Microservices, REST APIs, gRPC
 
 ## Education
 
-- Bachelor's Degree in Computer Science, Strathmore University (2015-2019)
+- Bachelor's Degree in Computer Science
 
 ## Let's Connect
 
 - [LinkedIn](https://www.linkedin.com/in/oirere-jr/)
 - Email: eoirerejr@gmail.com
-- Location: Nairobi, Kenya
+- Location: EMEA
 
 ---
 
