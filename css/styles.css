@@ -1,0 +1,339 @@
+/* Global Styles */
+:root {
+    --primary-color: #2d3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-text: #6c7a89;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --border-color: #ecf0f1;
+    --skills-bg: #edf2f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    color: var(--light-text);
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
+/* About Section */
+.about p {
+    font-size: 1.05rem;
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.job:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.company {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.job-date {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.skills-used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.skills-used span {
+    background-color: var(--skills-bg);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Two Column Layout */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Education Section */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.school {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.edu-date {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Skills Section */
+.skill-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.exp {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+.competencies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.competencies span {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.languages {
+    display: flex;
+    gap: 20px;
+}
+
+.languages div {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* References Section */
+.reference {
+    margin-bottom: 15px;
+}
+
+.ref-title, .ref-company {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.ref-email {
+    margin-top: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--light-text);
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    
+    .job-header {
+        flex-direction: column;
+    }
+    
+    .job-date {
+        margin-top: 5px;
+    }
+    
+    .skill-groups {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .skills-used {
+        gap: 6px;
+    }
+    
+    .skills-used span {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    header, section {
+        box-shadow: none;
+        border: 1px solid #eee;
+        break-inside: avoid;
+    }
+    
+    footer {
+        display: none;
+    }
+} 
