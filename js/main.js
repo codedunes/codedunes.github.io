@@ -40,135 +40,55 @@ document.addEventListener('DOMContentLoaded', function() {
         footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
     }
 
-    // Add theme toggle functionality
-    const createThemeToggle = () => {
-        const toggleBtn = document.createElement('button');
-        toggleBtn.classList.add('theme-toggle');
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        toggleBtn.title = 'Toggle dark/light mode';
+    // Add hover effects to job items
+    const jobs = document.querySelectorAll('.job');
+    jobs.forEach(job => {
+        job.addEventListener('mouseenter', () => {
+            const skills = job.querySelector('.skills-used');
+            if (skills) {
+                skills.style.transform = 'translateY(-5px)';
+                skills.style.transition = 'transform 0.3s ease';
+            }
+        });
         
-        // Add styles for the toggle button
-        const style = document.createElement('style');
-        style.textContent = `
-            .theme-toggle {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: var(--secondary-color);
-                color: white;
-                border: none;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                z-index: 100;
-                transition: all 0.3s ease;
+        job.addEventListener('mouseleave', () => {
+            const skills = job.querySelector('.skills-used');
+            if (skills) {
+                skills.style.transform = 'translateY(0)';
             }
-            .theme-toggle:hover {
-                transform: scale(1.05);
-                background-color: var(--accent-color);
-            }
-            body.dark-theme {
-                --primary-color: #ecf0f1;
-                --secondary-color: #3498db;
-                --accent-color: #e74c3c;
-                --text-color: #ecf0f1;
-                --light-text: #bdc3c7;
-                --background-color: #2c3e50;
-                --card-background: #34495e;
-                --border-color: #2c3e50;
-            }
-            @media print {
-                .theme-toggle {
-                    display: none;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Add to the DOM
-        document.body.appendChild(toggleBtn);
-        
+        });
+    });
+    
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
-            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
         // Add event listener
-        toggleBtn.addEventListener('click', () => {
+        themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
             const isDark = document.body.classList.contains('dark-theme');
             
             // Update button icon
-            toggleBtn.innerHTML = isDark ? 
+            themeToggle.innerHTML = isDark ? 
                 '<i class="fas fa-sun"></i>' : 
                 '<i class="fas fa-moon"></i>';
                 
             // Save preference
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
-    };
+    }
     
-    // Create theme toggle button
-    createThemeToggle();
-    
-    // Add print resume button
-    const createPrintButton = () => {
-        const printBtn = document.createElement('button');
-        printBtn.classList.add('print-btn');
-        printBtn.innerHTML = '<i class="fas fa-print"></i>';
-        printBtn.title = 'Print Resume';
-        
-        // Add styles for the print button
-        const style = document.createElement('style');
-        style.textContent = `
-            .print-btn {
-                position: fixed;
-                bottom: 20px;
-                right: 80px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: var(--secondary-color);
-                color: white;
-                border: none;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                z-index: 100;
-                transition: all 0.3s ease;
-            }
-            .print-btn:hover {
-                transform: scale(1.05);
-                background-color: var(--accent-color);
-            }
-            @media print {
-                .print-btn {
-                    display: none;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Add to the DOM
-        document.body.appendChild(printBtn);
-        
-        // Add event listener
-        printBtn.addEventListener('click', () => {
+    // Print Button Functionality
+    const printButton = document.querySelector('.print-button');
+    if (printButton) {
+        printButton.addEventListener('click', function() {
             window.print();
         });
-    };
-    
-    // Create print button
-    createPrintButton();
+    }
 }); 
