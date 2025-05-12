@@ -4,7 +4,7 @@
 
 Welcome to my professional portfolio hosted on GitHub Pages. This repository contains the source code for my online resume and portfolio showcasing my experience, skills, and career journey.
 
-👉 **[View Live Portfolio](https://edoirere.github.io)** 👈
+👉 **[View Live Portfolio](https://codedunes.github.io)** 👈
 
 ## About Me
 
